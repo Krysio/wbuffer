@@ -1,11 +1,6 @@
 import WBuffer from "../index";
 import { randomData } from "./helper";
 
-let a = Buffer.alloc(8);
-a.writeIntLE(255, 0, 4);
-a.writeIntLE(-256, 4, 4);
-console.log(a);
-
 it('leb128', () => {
     for (let [expected, bufferValue] of [[0, [0x80]]] as [number, number[]][]) {
         const buffer = WBuffer.from(bufferValue);
@@ -54,6 +49,10 @@ it('uleb128', () => {
 
         expect(result).toBe(value);
     }
+});
+
+it('iterable', () => {
+    expect([...WBuffer.from([1, 2, 3])]).toEqual([1, 2, 3]);
 });
 
 it('ulebSize, <ulebLength, buffer>[]', () => {
