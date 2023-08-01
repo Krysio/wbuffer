@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  develop:
+    container_name: js-lib-buffer-develop
+    image: js-lib/buffer
+    build:
+      context: ./app
+      dockerfile: ../Dockerfile
+      target: base
+    volumes:
+      - ./app/:/app/
+    command: /bin/bash # npm run dev
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
