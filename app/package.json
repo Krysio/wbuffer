@@ -1,8 +1,9 @@
 {
   "name": "wbuffer",
   "version": "1.0.0",
-  "description": "Wrapper for standard buffer. Features: leb128: read/write, cursor.",
-  "main": "index.js",
+  "description": "Wrapper for node:buffer. Features: leb128: read/write, cursor.",
+  "type": "commonjs",
+  "main": "build",
   "scripts": {
     "test": "npx jest",
     "build": "npx tsc --project tsconfig.build.json"

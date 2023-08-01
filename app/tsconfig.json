@@ -2,14 +2,13 @@
   "compilerOptions": {
     "lib": ["esnext"],
     "target": "esnext",
-    "module": "es6",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     },
-    "types": ["jest"],
+    "types": ["node", "jest"],
   },
   "include": ["src/**/*"]
 }
